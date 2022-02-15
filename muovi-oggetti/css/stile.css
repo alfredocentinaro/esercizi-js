@@ -1,0 +1,8 @@
+#blocco
+{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background-color: blueviolet;
+    border: 2px dotted black;
+}
