@@ -11,5 +11,6 @@ Scrivi un programma in JavaScript per gestire un magazzino di prodotti secondo l
   Per la gestione dei movimenti prevedere i pulsanti Registra, Elenco completo, Elenco singolo prodotto. 
   
   NB: Tenere presente che quando si registra un movimento bisogna anche aggiornare la giacenza in PRODOTTO.
-  Aggiungere i pulsanti per salvare e caricare da disco l'elenco dei prodotti e dei movimenti. 
+  
+  Aggiungere i pulsanti per salvare e caricare da LOCALSTORAGE l'elenco dei prodotti e dei movimenti. 
   Realizzare una opportuna interfaccia grafica per soddisfare le specifiche di progetto.
