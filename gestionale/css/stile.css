@@ -1,0 +1,43 @@
+/**
+ blu    #0000ad
+ acqua  #00a8a8
+ grigio #a8a8a8
+ giallo #fcfe54
+*/
+
+body
+{
+    background-color: #00a8a8;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+}
+
+fieldset 
+{ 
+    border:1px solid #a8a8a8; 
+    padding: 1em 1em 1em 1em;
+}
+
+form
+{
+    background-color: #0000ad;
+    padding: 1em 1em 1em 1em;
+}
+
+.elenco
+{
+    width: auto;
+    height: 93%;
+    background-color: #a8a8a8;
+    padding: 1em 1em 0 1em;
+}
+
+#tabella-prodotti, #tabella-movimenti
+{
+    width: 100%;
+}
+
+th
+{
+    border-bottom: 1px solid white;
+}
