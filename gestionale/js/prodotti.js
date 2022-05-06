@@ -28,7 +28,30 @@ class Prodotti
         return this.prodotti.length;
     }
 
-    
+    aggiornaGiacenza(_codice, _qta)
+    {
+        for( let i = 0; i < this.numProdotti(); i++)
+        { 
+            if ( this.prodotti[i].codice == _codice) 
+            {
+                this.prodotti[i].giacenza += _qta;
+            }
+         }        
+    }
+
+    esiste(_codice)
+    {
+        for( let i = 0; i < this.numProdotti(); i++)
+        { 
+            if ( this.prodotti[i].codice == _codice) 
+            {
+                return true;
+            }
+         }      
+         
+         return false;
+    }    
+
     visualizza(_objTabella) 
     {
         _objTabella.innerHTML = ""; //resetto la tabella e ridisegno 
@@ -51,6 +74,8 @@ class Prodotti
     {
         let jsonArticoli = localStorage.getItem("prodotti");
         let data  = JSON.parse(jsonArticoli);
+        if (data == null)
+            return;
         for (let articoloData of data) {
           let articolo = new Prodotto(
             articoloData.codice,
@@ -65,6 +90,16 @@ class Prodotti
 
     prodottoprezzomax()
     {
+        let prodottomax = new Prodotto("","","",0,0);
+        this.prodotti.forEach(element => 
+            {
+                if (element.getPrezzo() > prodottomax.getPrezzo())
+                {
+                    prodottomax = element;
+                }
+                
+            });
 
+        return prodottomax.toString();    
     }
 }

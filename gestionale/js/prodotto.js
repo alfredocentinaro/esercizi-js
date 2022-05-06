@@ -10,16 +10,25 @@ class Prodotto
     } 
 
 
-	get codice()
+	getCodice()
     {
         return this.codice;
     }
 
-	set codice(_codice)
+	setCodice(_codice)
     {
         this.codice = _codice;
     }
 
+    getPrezzo()
+    {
+        return this.prezzo;
+    }
+
+	setPrezzo(_prezzo)
+    {
+        this.prezzo = _prezzo;
+    }
 
     toString() 
     {

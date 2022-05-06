@@ -26,7 +26,7 @@ var objBtnSalvaProdotti     = document.querySelector("#btn-salva-prodotti");
  objBtnSalvaProdotti.addEventListener("click",salvaprodotti);
 
  /**
-  * Funzioni associate agli eventi
+  * Funzioni associate agli eventi prodotto
   */
 function aggiungiprodotto()
 {
@@ -34,7 +34,6 @@ function aggiungiprodotto()
     let nome = document.querySelector("#nome").value;  
     let descrizione = document.querySelector("#descrizione").value;  
     let prezzo = parseFloat(document.querySelector("#prezzo").value); 
-    //let giacenza = parseInt(document.querySelector("#giacenza").value);       
     let prodotto = new Prodotto(codice,nome, descrizione,prezzo);
     prodotti.aggiungi(prodotto);
 
@@ -43,7 +42,7 @@ function aggiungiprodotto()
 
 function eliminaprodotto()
 {
-    let codice = document.querySelector("#codice").value; 
+    let codice = document.querySelector("#codice-elimina").value; 
     prodotti.elimina(codice);
     visualizzaprodotti();
 }
@@ -56,12 +55,15 @@ function visualizzaprodotti()
 
 function visualizzaprezzomax()
 {
-    
+    let objInfo = document.querySelector("#info");
+    let stringa = prodotti.prodottoprezzomax();
+    objInfo.innerHTML = "Prodotto prezzo MAX: " + stringa;
 }
 
 function caricaprodotti()
 {
     prodotti.load();
+    visualizzaprodotti();
 }
 
 function salvaprodotti()
@@ -72,6 +74,66 @@ function salvaprodotti()
 
 
 
+
 /**
  * Pulsanti Gestione Movimenti
  */
+ var objBtnAggiungiMovimento  = document.querySelector("#btn-aggiungi-movimento");
+ var objBtnTuttiMovimenti     = document.querySelector("#btn-tutti-movimenti");
+ var objBtnMovimentiProdotto  = document.querySelector("#btn-movimenti-prodotto");
+ var objBtnCaricaMovimenti    = document.querySelector("#btn-carica-movimenti");
+ var objBtnSalvaMovimenti     = document.querySelector("#btn-salva-movimenti");
+ 
+ /**
+  * Eventi Gestione Movimenti
+  */
+  objBtnAggiungiMovimento.addEventListener("click",aggiungimovimento);
+  objBtnTuttiMovimenti.addEventListener("click",visualizzamovimenti);
+  objBtnMovimentiProdotto.addEventListener("click",visualizzamovimentiprodotto);
+  objBtnCaricaMovimenti.addEventListener("click",caricamovimenti);
+  objBtnSalvaMovimenti.addEventListener("click",salvamovimenti);
+
+/**
+ * Funzioni associate agli eventi movimento
+ */
+ function visualizzamovimenti()
+ {
+     let objTabellaMovimenti = document.querySelector("#tabella-movimenti tbody");
+     movimenti.visualizza(objTabellaMovimenti);
+ }
+
+
+ function aggiungimovimento()
+ {
+    let codice = document.querySelector("#codice-prodotto").value;   
+    let data = document.querySelector("#data-movimento").value;  
+    let qta = parseFloat(document.querySelector("#quantita").value);  
+
+    if (prodotti.esiste(codice) == true)
+    {
+        movimenti.aggiungi(new Movimento("",codice,data,qta));
+        prodotti.aggiornaGiacenza(codice,qta);
+        visualizzamovimenti();
+        visualizzaprodotti(); //aggiorna visualizzazione giacenza
+    }
+
+ }
+
+ function visualizzamovimentiprodotto()
+ {
+    let codice = document.querySelector("#filtro-codice-movimento").value;   
+    let objTabellaMovimenti = document.querySelector("#tabella-movimenti tbody");
+    movimenti.visualizzaPerProdotto(codice,objTabellaMovimenti);    
+
+ }
+
+ function caricamovimenti()
+{
+    movimenti.load();
+    visualizzamovimenti();
+}
+
+function salvamovimenti()
+{
+    movimenti.save();
+}
