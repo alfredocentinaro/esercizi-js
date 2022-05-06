@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Gestionale TuTiTu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/stile.css" type="text/css">
+    </head>
+
+    <body>
+        
+
+        <!-- GESTIONE PRODOTTI --->
+        <div class="container">
+
+            <h1>Gestionale TuTiTu</h1>
+            <div class="row">
+              <div class="col">
+                <h2>Gestione Prodotti</h2>
+                <form onsubmit="event.preventDefault();">
+                    <fieldset>    
+                        <legend>Inserisci Prodotto</legend>
+                    <div class="mb-3">
+                      <label for="codice" class="form-label">Codice</label>
+                      <input type="text" class="form-control" id="codice" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" >
+                      </div>
+                      <div class="mb-3">
+                        <label for="descrizione" class="form-label">Descrizione</label>
+                        <input type="text" class="form-control" id="descrizione" >
+                      </div> 
+                      <div class="mb-3">
+                        <label for="prezzo" class="form-label">Prezzo</label>
+                        <input type="number" class="form-control" id="prezzo" >
+                      </div> 
+                      <!-- div class="mb-3">
+                        <label for="giacenza" class="form-label">Giacenza</label>
+                        <input type="number" class="form-control" id="giacenza">
+                      </div -->                                                                
+                    <button type='button' id="btn-aggiungi-prodotto" class="btn btn-secondary">Aggiungi</button>
+                    </fieldset>
+                </form>
+              </div>
+              <div class="col">
+                <h2>Elenco Prodotti</h2>
+                <div id="elenco-prodotti" class="elenco">
+                    <table id="tabella-prodotti">
+                        <thead>
+                            <th>Codice</th>
+                            <th>Nome</th>
+                            <th>Descrizione</th>
+                            <th>Prezzo</th>
+                            <th>Giacenza</th>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                  <form>
+                      <fieldset>    
+                        <legend>Altre funzioni</legend>
+
+                          <div class="row">
+                            <div class="col col-sm-2">
+                                <label for="codice" class="form-label">Codice</label>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="codice">
+                            </div>
+                            <div class="col">
+                                <button type='button' class="btn btn-danger" id="btn-elimina-prodotto">Elimina</button>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col">&nbsp;</div>
+                            <div class="col">&nbsp;</div>
+                          </div>                           
+
+                          <div class="row">
+                            <div class="col">
+                                <button type='button' class="btn btn-success" id="btn-tutti-prodotti">Visualizza Tutti</button>
+                            </div>
+                            <div class="col">
+                                <button type='button' class="btn btn-primary" id="btn-prezzo-max">Visualizza Prezzo Max</button>
+                            </div>
+                          </div>  
+                          
+                          <div class="row">
+                            <div class="col">&nbsp;</div>
+                            <div class="col">&nbsp;</div>
+                          </div> 
+
+                          <div class="row">
+                            <div class="col">
+                                <button type='button' class="btn btn-secondary" id="btn-carica-prodotti">Carica</button>
+                            </div>
+                            <div class="col">
+                                <button type='button' class="btn btn-secondary" id="btn-salva-prodotti">Salva</button>
+                            </div>
+                          </div>                           
+
+                        
+                      </fieldset>
+                  </form>
+                </div>
+                <div class="col">
+                    <!-- messaggio esito altre azioni -->
+                </div>
+            </div>              
+
+
+
+        <!-- GESTIONE MOVIMENTI-->
+
+
+            <div class="row">
+                <div class="col">
+                  <h2>Gestione Movimenti</h2>
+                  <form>
+                      <fieldset>    
+                          <legend>Effettua Movimento</legend>
+                        <div class="mb-3">
+                          <label for="codice-prodotto" class="form-label">Codice Prodotto</label>
+                          <input type="text" class="form-control" id="codice-prodotto" >
+                        </div>
+                        <div class="mb-3">
+                          <label for="data-movimento" class="form-label">Data </label>
+                          <input type="date" class="form-control" id="data-movimento" >
+                        </div> 
+                        <div class="mb-3">
+                          <label for="quantita" class="form-label">Quantità +/-</label>
+                          <input type="number" class="form-control" id="quantita" >
+                        </div> 
+                                                          
+                      <button type='button' id="btn-muovi" class="btn btn-secondary">Registra</button>
+                      </fieldset>
+                  </form>
+                </div>
+                <div class="col">
+                  <h2>Elenco Movimenti</h2>
+                  <div id="elenco-movimenti" class="elenco"></div>
+                </div>
+  
+              </div>
+  
+              <div class="row">
+                  <div class="col">
+                    <form>
+                        <fieldset>    
+                          <legend>Altre funzioni</legend>
+  
+                            <div class="row">
+                              <div class="col col-sm-2">
+                                  <label for="codice" class="form-label">Codice</label>
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="codice">
+                              </div>
+                              <div class="col">
+                                  <button type='button' class="btn btn-primary" id="elimina">Visualizza prodotto</button>
+                              </div>
+                            </div>
+  
+                            <div class="row">
+                              <div class="col">&nbsp;</div>
+                              <div class="col">&nbsp;</div>
+                            </div>                           
+  
+                            <div class="row">
+                              <div class="col">
+                                  <button type='button' class="btn btn-success" id="tutti">Visualizza Movimenti</button>
+                              </div>
+                            </div>       
+
+                            <div class="row">
+                                <div class="col">&nbsp;</div>
+                                <div class="col">&nbsp;</div>
+                              </div>  
+
+                            <div class="row">
+                                <div class="col">
+                                    <button type='button' class="btn btn-secondary" id="carica-movimenti">Carica</button>
+                                </div>
+                                <div class="col">
+                                    <button type='button' class="btn btn-secondary" id="salva-movimenti">Salva</button>
+                                </div>
+                              </div>                              
+                          
+                        </fieldset>
+                    </form>
+                  </div>
+                  <div class="col">
+                      <!-- messaggio esito altre azioni -->
+                  </div>
+              </div>   
+
+
+
+
+        </div>  
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="js/prodotto.js"></script>
+        <script src="js/movimento.js"></script>
+        <script src="js/prodotti.js"></script>
+        <script src="js/movimenti.js"></script>
+        <script src="js/main.js"></script>
+    </body>    
+</html>
+
