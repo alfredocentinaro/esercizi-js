@@ -9,8 +9,9 @@ Scrivi un programma in JavaScript per gestire un magazzino di prodotti secondo l
 - Implementare la classe MOVIMENTO. Di ogni movimento si registrano il codice del prodotto, la data del movimento e la quantità movimentata (positiva se in entrata, negativa se in uscita).
 - Implementare la classe MOVIMENTI per registrare tutte le operazioni di movimentazione dei prodotti attraverso un array e le operazioni di gestione.
   Per la gestione dei movimenti prevedere i pulsanti Registra, Elenco completo, Elenco singolo prodotto. 
+- Aggiungere i pulsanti per salvare e caricare da LOCALSTORAGE l'elenco dei prodotti e dei movimenti. 
   
   NB: Tenere presente che quando si registra un movimento bisogna anche aggiornare la giacenza in PRODOTTO.
   
-  Aggiungere i pulsanti per salvare e caricare da LOCALSTORAGE l'elenco dei prodotti e dei movimenti. 
+
   Realizzare una opportuna interfaccia grafica per soddisfare le specifiche di progetto.
