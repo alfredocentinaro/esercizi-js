@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<script src="js/corsa.js"></script>
+	<link href="css/cavalli.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<h1>La corsa di cavalli</h1>
+<p>Usando il javascript crea una piccola simulazione di corsa (da un lato all'altro dello schermo!). <br >
+<ul>
+<li>Crea tre immagini con id differenti. Puoi caricare l'immagine che vuoi ma ti consiglio di ridimensionarle a 50px x 50px</li>
+<li>Posizionali con il css ai bordi dello schermo</li>
+<li>Crea una funzione js Corri() che usando la funzione Math.floor((Math.random() * 100) + 1); sposta gli oggetti a sinistra di un numero casuale tra 1 e 100</li>
+<li>Crea un bottone Run che premuto (tante volte) richiami la funzione Corri()</li>
+<li>Chi arriva prima in fondo allo schermo, vince. Per vedere dove si torva un oggetto, ci sono le proprietà offsetLeft e offsetTop da usare con il getElementById()
+<br>
+<i>Opzionale</i>
+<li>Disegna con tre contenitori div le tre piste dove piazzi sopra le immagini. Colorale con un colore nero tipo asfalto</li>
+<li>Prova a iterare in modo automatico gli spostamenti con un ciclo </li>
+<li><b>TOSTO </b>Usa le funzioni = setTimeout(Corri,10); //Ripete lo spostamento per 10 millisecondi e clearTimeout(id);//Cancella l'animazione avviata da setTimeout</li>
+</ul>
+</p>
+
+<br><br>
+<img src="img/bandiera.gif" id="traguardo">
+<img src="img/cavallo1.jpg" alt="cavallo1" id="cavallo1"><br><br><br>
+<img src="img/cavallo2.jpg" alt="cavallo2" id="cavallo2"><br><br><br>
+<img src="img/cavallo3.jpg" alt="cavallo3" id="cavallo3"><br><br><br>
+
+<input type="button" onclick="corriSemplice()" value="Corri!">
+
+</body>
+</html>
