@@ -1,4 +1,4 @@
-Gestionale JavaScript
+# Gestionale JavaScript
 
 Scrivi un programma in JavaScript per gestire un magazzino di prodotti secondo le seguenti specifiche:
 
