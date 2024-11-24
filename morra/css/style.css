@@ -1,1 +1,18 @@
+#contenitore{
+    display: flex;
+    justify-content: center;
+}
 
+#contenitore > img {
+    margin: 0 1rem 0 0;
+    width: 20%;
+    border: 1px solid grey;
+}
+
+button{
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: darkgreen;
+    color:aliceblue;
+    border-radius: 0.15rem;
+}
